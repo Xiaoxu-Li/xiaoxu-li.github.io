@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Xiaoxu Li</title>
+    <style>
+      :root {
+        --text: #202124;
+        --muted: #62676f;
+        --line: #dde2e8;
+        --bg: #fbfcfe;
+        --link: #2457a6;
+        --accent: #2f7d62;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        background: var(--bg);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Arial, sans-serif;
+        line-height: 1.58;
+      }
+
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .page {
+        width: min(860px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 54px 0 64px;
+      }
+
+      header {
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(38px, 8vw, 56px);
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      .role {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .contact span {
+        display: inline-flex;
+        gap: 6px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 22px;
+        font-size: 14px;
+      }
+
+      section {
+        padding-top: 34px;
+      }
+
+      h2 {
+        margin: 0 0 14px;
+        color: var(--accent);
+        font-size: 18px;
+        line-height: 1.3;
+        letter-spacing: 0;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: 8px 18px;
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+      }
+
+      dt {
+        color: var(--muted);
+      }
+
+      dd {
+        margin: 0;
+      }
+
+      .interests {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
+      }
+
+      .tag {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: #fff;
+        color: #3c4043;
+        font-size: 13px;
+      }
+
+      .publications {
+        display: grid;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: papers;
+      }
+
+      .publications li {
+        position: relative;
+        padding: 0 0 20px 42px;
+        border-bottom: 1px solid var(--line);
+        counter-increment: papers;
+      }
+
+      .publications li::before {
+        content: counter(papers);
+        position: absolute;
+        left: 0;
+        top: 2px;
+        display: grid;
+        place-items: center;
+        width: 26px;
+        height: 26px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: #fff;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .title {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.42;
+      }
+
+      .meta {
+        margin: 5px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 7px;
+        font-size: 14px;
+      }
+
+      .note {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      footer {
+        margin-top: 36px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 640px) {
+        .page {
+          width: min(100% - 28px, 860px);
+          padding-top: 34px;
+        }
+
+        .facts {
+          grid-template-columns: 1fr;
+          gap: 2px 0;
+        }
+
+        dd {
+          margin-bottom: 8px;
+        }
+
+        .publications li {
+          padding-left: 0;
+        }
+
+        .publications li::before {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <h1>Xiaoxu Li</h1>
+        <p class="role">Associate Professor, Department of Mathematics, Faculty of Arts and Sciences, Beijing Normal University</p>
+        <div class="contact" aria-label="Contact information">
+          <span>Email: <a href="mailto:xiaoxuli@bnu.edu.cn">xiaoxuli@bnu.edu.cn</a></span>
+          <span>Zhuhai, China</span>
+        </div>
+        <nav aria-label="Page navigation">
+          <a href="#information">Information</a>
+          <a href="#education">Education</a>
+          <a href="#employment">Employment</a>
+          <a href="#publications">Publications</a>
+        </nav>
+      </header>
+
+      <section id="information" aria-labelledby="information-title">
+        <h2 id="information-title">Information</h2>
+        <dl class="facts">
+          <dt>Position</dt>
+          <dd>Associate Professor</dd>
+          <dt>Department</dt>
+          <dd>Department of Mathematics</dd>
+          <dt>Institution</dt>
+          <dd>Faculty of Arts and Sciences, Beijing Normal University</dd>
+          <dt>Research interests</dt>
+          <dd>
+            <div class="interests">
+              <span class="tag">Quantum Chemistry</span>
+              <span class="tag">Numerical PDEs</span>
+              <span class="tag">Eigenvalue Problems</span>
+            </div>
+          </dd>
+        </dl>
+      </section>
+
+      <section id="education" aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        <dl class="facts">
+          <dt>2018-2021</dt>
+          <dd>Ph.D. in Science, School of Mathematical Sciences, Beijing Normal University</dd>
+          <dt>2020-2021</dt>
+          <dd>Visiting Scholar, Department of Mathematics, University of California, Berkeley</dd>
+          <dt>2015-2018</dt>
+          <dd>M.S. in Science, School of Mathematical Sciences, Beijing Normal University</dd>
+          <dt>2011-2015</dt>
+          <dd>B.S. in Science, School of Mathematical Sciences, Tianjin Normal University</dd>
+        </dl>
+      </section>
+
+      <section id="employment" aria-labelledby="employment-title">
+        <h2 id="employment-title">Employment</h2>
+        <dl class="facts">
+          <dt>2026-present</dt>
+          <dd>Associate Professor, Faculty of Arts and Sciences, Beijing Normal University</dd>
+          <dt>2024-2026</dt>
+          <dd>Lecturer, Faculty of Arts and Sciences, Beijing Normal University</dd>
+          <dt>2021-2024</dt>
+          <dd>Lecturer, Faculty of Education for the Future, Beijing Normal University</dd>
+        </dl>
+      </section>
+
+      <section id="publications" aria-labelledby="publications-title">
+        <h2 id="publications-title">Publications</h2>
+        <p class="note">* Corresponding author.</p>
+        <ol class="publications" id="publication-list"></ol>
+      </section>
+
+      <footer>
+        Last updated: September 2026
+      </footer>
+    </main>
+
+    <script>
+      const publications = [
+        {
+          title: "A discontinuous Galerkin scheme for full-potential electronic structure calculations",
+          authors: "Xiaoxu Li and Huajie Chen*",
+          venue: "Journal of Computational Physics, 385, 33-50, 2019.",
+          links: [{ label: "DOI", url: "https://doi.org/10.1016/j.jcp.2019.02.006" }]
+        },
+        {
+          title: "Staggered mesh method for correlation energy calculations of solids: second-order Moller-Plesset perturbation theory",
+          authors: "Xin Xing, Xiaoxu Li, and Lin Lin*",
+          venue: "Journal of Chemical Theory and Computation, 17, 4733-4745, 2021.",
+          links: [{ label: "DOI", url: "https://doi.org/10.1021/acs.jctc.1c00207" }]
+        },
+        {
+          title: "Numerical analysis of multiple scattering theory for electronic structure calculations",
+          authors: "Xiaoxu Li*, Huajie Chen, and Xingyu Gao",
+          venue: "IMA Journal of Numerical Analysis, 43, 2228-2264, 2023.",
+          links: [{ label: "DOI", url: "https://doi.org/10.1093/imanum/drac040" }]
+        },
+        {
+          title: "Unified analysis of finite-size error for periodic Hartree-Fock and second order Moller-Plesset perturbation theory",
+          authors: "Xin Xing, Xiaoxu Li, and Lin Lin*",
+          venue: "Mathematics of Computation, 93, 679-727, 2024.",
+          links: [{ label: "DOI", url: "https://doi.org/10.1090/mcom/3877" }]
+        },
+        {
+          title: "Approximations of the Green's function in multiple scattering theory for crystalline systems",
+          authors: "Xiaoxu Li and Huajie Chen*",
+          venue: "ESAIM: Mathematical Modelling and Numerical Analysis, 59, 1657-1683, 2025.",
+          links: [{ label: "DOI", url: "https://doi.org/10.1051/m2an/2025037" }]
+        },
+        {
+          title: "Numerical analysis of multi-patch discontinuous Galerkin isogeometric method for full-potential electronic structure calculations",
+          authors: "Xiaoxu Li and Xucheng Meng*",
+          venue: "Journal of Computational and Applied Mathematics, 477, 117125, 2026.",
+          links: [{ label: "DOI", url: "https://doi.org/10.1016/j.cam.2025.117125" }]
+        },
+        {
+          title: "A multi-level Monte Carlo tree search method for configuration generation in crystalline systems",
+          authors: "Xiaoxu Li, Ge Xu, Huajie Chen*, Xingyu Gao*, and Haifeng Song*",
+          venue: "Computer Physics Communications, 322, 110079, 2026.",
+          links: [{ label: "DOI", url: "https://doi.org/10.1016/j.cpc.2026.110079" }]
+        },
+        {
+          title: "A Hybrid Discontinuous Galerkin Method with Isogeometric-Planewaves Coupling for Periodic Full-Potential Electronic Structure Calculations",
+          authors: "Baowei Lai, Xucheng Meng, and Xiaoxu Li",
+          venue: "arXiv:2605.24829, 2026.",
+          links: [{ label: "arXiv", url: "https://arxiv.org/abs/2605.24829" }]
+        }
+      ];
+
+      const publicationList = document.querySelector("#publication-list");
+
+      function renderLinks(links) {
+        return links
+          .map((link) => `<a href="${link.url}">${link.label}</a>`)
+          .join("");
+      }
+
+      publicationList.innerHTML = publications
+        .slice()
+        .reverse()
+        .map(
+          (paper) => `
+            <li>
+              <p class="title">${paper.title}</p>
+              <p class="meta">${paper.authors}. ${paper.venue}</p>
+              <div class="links">${renderLinks(paper.links)}</div>
+            </li>
+          `
+        )
+        .join("");
+    </script>
+  </body>
+</html>
