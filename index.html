@@ -291,9 +291,34 @@
       </section>
 
       <footer>
-        Last updated: September 2026
+        Last updated: <span id="last-updated">October 2026</span>
       </footer>
     </main>
+
+    <script>
+      async function updateDate() {
+        try {
+          const response = await fetch(
+            "https://api.github.com/repos/Xiaoxu-Li/xiaoxu-li.github.io/commits?path=index.html&per_page=1"
+          );
+          if (!response.ok) return;
+
+          const commits = await response.json();
+          const date = new Date(commits[0].commit.committer.date);
+          if (isNaN(date.getTime())) return;
+
+          document.getElementById("last-updated").textContent =
+            date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              timeZone: "Asia/Shanghai"
+            });
+        } catch {
+          // 无法获取时保留备用日期。
+        }
+      }
+      updateDate();
+    </script>
 
     <script>
       const publications = [
